@@ -863,7 +863,22 @@ const ResultRestaurant = () => {
           </section>
         </main>
 
-        
+        {/* Sticky details sidebar */}
+        <aside className="lg:col-span-1">
+          <div className="sticky top-24 bg-white rounded-xl p-6 shadow">
+            <h3 className="font-semibold text-xl mb-3">Details</h3>
+            <p className="text-sm text-gray-600 mb-2">Cuisine: {Array.isArray(restaurant.cuisineType) ? restaurant.cuisineType.join(', ') : (restaurant.cuisineType || restaurant.cuisine || '—')}</p>
+            <p className="text-sm text-gray-600 mb-2">Contact: {(restaurant.contact && (restaurant.contact.phone || restaurant.contact)) || '—'}</p>
+            <p className="text-sm text-gray-600 mb-2">Email: {(restaurant.contact && restaurant.contact.email) || restaurant.email || '—'}</p>
+            <p className="text-sm text-gray-600 mb-3">Address: {restaurant.address && (restaurant.address.street || restaurant.address.city) || '—'}</p>
+            <div className="border-t pt-3 mt-3">
+              <p className="text-sm text-gray-700">Status: <span className={`font-semibold ${isOpen ? 'text-green-600' : 'text-red-500'}`}>{isOpen ? 'Open' : 'Closed'}</span></p>
+              {state?.from?.budget && <p className="mt-2 text-sm text-gray-700">Your budget: <span className="font-semibold">LKR {state.from.budget}</span></p>}
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
   )
 }
 
