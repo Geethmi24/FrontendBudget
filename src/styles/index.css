@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200;
+  }
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Dark theme overrides when `theme-dark` class is present on <html> */
+.theme-dark body {
+  /* dark background similar to hero overlays on Landing Page */
+  background: linear-gradient(180deg, #071026 0%, #061122 60%);
+  color: #e6eef8;
+}
+
+.theme-dark .bg-white {
+  background-color: rgba(6,9,16,0.85) !important;
+}
+
+.theme-dark .card {
+  background: linear-gradient(180deg, rgba(6,9,16,0.9), rgba(8,12,20,0.85)) !important;
+  color: #e6eef8 !important;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.theme-dark .text-gray-600,
+.theme-dark .text-gray-700,
+.theme-dark .text-gray-500,
+.theme-dark .text-gray-800 {
+  color: #cbd5e1 !important;
+}
+
+.theme-dark input,
+.theme-dark textarea,
+.theme-dark select {
+  background-color: rgba(3,6,12,0.6) !important;
+  color: #e6eef8 !important;
+  border-color: rgba(255,255,255,0.06) !important;
+}
+
+.theme-dark .border {
+  border-color: rgba(255,255,255,0.06) !important;
+}
+
+.theme-dark .bg-gray-50 {
+  background-color: rgba(3,6,12,0.5) !important;
+}
+
+/* Accent gradient consistent with Landing Page (orange -> amber) */
+.theme-dark .bg-orange-500,
+.theme-dark .from-orange-500,
+.theme-dark .to-amber-500,
+.theme-dark .from-amber-500,
+.theme-dark .to-orange-500 {
+  background-image: linear-gradient(90deg,#f97316,#f59e0b) !important;
+  color: #fff !important;
+}
+
+/* Buttons styled like Landing Page translucent panels */
+.theme-dark .btn-primary {
+  background-image: linear-gradient(90deg,#f97316,#f59e0b) !important;
+  color: #fff !important;
+  box-shadow: 0 6px 18px rgba(249,115,22,0.16);
+}
+
+.theme-dark .btn-secondary {
+  border-color: rgba(255,255,255,0.08) !important;
+  color: #f97316 !important;
+}
+
+/* Subtle translucent panels used on Landing Page */
+.theme-dark .backdrop-panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+}
